@@ -19,7 +19,7 @@ const index = () => {
 
 <div style={{display:'flex', justifyContent:'center',  paddingBottom:'50px'}}>
 
-<a onClick={() => {window.location.href="/"}}>
+<a href="/" onClick={() => {window.location.href="/"}}>
 <button className="theme-btn-one btn-black-overlay btn_sm" download >Go back home</button></a>
  
 </div>

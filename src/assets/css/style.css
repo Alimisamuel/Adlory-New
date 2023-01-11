@@ -9096,16 +9096,16 @@ justify-content: space-between;
 
 /* search container */
 .search_data_result{
-    width: 350px;
-    height: 270px;
+    /* width: 350px;
+    height: 270px; */
     overflow-y: scroll;
     color: white;
     position: relative;
   /* left: 450px;
   bottom: -300px;   */
-  margin-top: 15px;
+  /* margin-top: 15px; */
   margin: 0 auto;
-  margin-top: 300px;
+  /* margin-top: 300px; */
   background-color: white;
   color:black ;
   padding: 10px;
@@ -9137,4 +9137,14 @@ justify-content: space-between;
 }
 .newsletterHeading{
     color: #e07038 !important;
+}
+.paystack_btn{
+    background-color: black;
+    width: 100%;
+    padding: 15px 20px;
+    color:white;
+}
+.paystack_btn:hover{
+    color:'white';
+    background-color: #e07038;
 }

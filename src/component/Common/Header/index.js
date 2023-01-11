@@ -5,49 +5,44 @@ import logo from "../../../assets/img/logo.png";
 import { MenuData } from "./MenuData";
 import NaveItems from "./NaveItems";
 import TopHeader from "./TopHeader";
+// import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import svg from "../../../assets/img/svg/cancel.svg";
 import svgsearch from "../../../assets/img/svg/search.svg";
 
-
 import { useDispatch, useSelector } from "react-redux";
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 import { ProductData } from "../../../app/data/productsData";
 
 // import { LinkedinShareButton } from "react-share";
 
 const Header = (props) => {
-  
-
   // let dispatch = useDispatch()
 
   const [filteredData, setFilteredData] = useState([]);
-  const handleFilter = (event) =>{
-    const searchWord = event.target.value
-    const newFilter = ProductData.filter((item)=>{
+  const handleFilter = (event) => {
+    const searchWord = event.target.value;
+    const newFilter = ProductData.filter((item) => {
       return item.title.toLowerCase().includes(searchWord.toLowerCase());
     });
-    if (searchWord === ""){
-      setFilteredData([])
-
-    }
-    else{
-
+    if (searchWord === "") {
+      setFilteredData([]);
+    } else {
       setFilteredData(newFilter);
-      
     }
-  }
- 
-  const showPro = ProductData.map((item)=>item.title);
-  console.log(showPro)
+  };
+
+  const showPro = ProductData.map((item) => item.title);
+  console.log(showPro);
   const [click, setClick] = useState(false);
   const [show, setShow] = useState();
-  const history = useHistory();
+  // const history = useHistory();
   let carts = useSelector((state) => state.products.carts);
   let favorites = useSelector((state) => state.products.favorites);
   // let dispatch = useDispatch();
-  let dispatch = useDispatch()
+  let dispatch = useDispatch();
 
   const rmCartProduct = (id) => {
     dispatch({ type: "products/removeCart", payload: { id } });
@@ -86,7 +81,6 @@ const Header = (props) => {
 
   const handleSearch = () => {
     if (click) {
-
       document.querySelector("#search").style =
         "transform: translate(-100%, 0); opacity: 0";
     } else {
@@ -138,7 +132,6 @@ const Header = (props) => {
 
   return (
     <>
-    
       <TopHeader />
       <header className="header-section d-none d-xl-block">
         <div className="header-wrapper">
@@ -149,15 +142,14 @@ const Header = (props) => {
                   <div className="header-logo">
                     <div className="logo">
                       <Link to="/">
-                        <img src={logo} alt="logo"  style={{ width: "120px" }} />
+                        <img src={logo} alt="logo" style={{ width: "120px" }} />
                       </Link>
                     </div>
                   </div>
                   <div className="main-menu menu-color--black menu-hover-color--golden d-none d-xl-block">
                     <nav>
                       <ul>
-                        
-                      <li>
+                        <li>
                           <Link to="/">Home</Link>
                         </li>
                         {MenuData.map((item, index) => (
@@ -169,7 +161,11 @@ const Header = (props) => {
                         </li>
 
                         <li>
-                          <Link style={{pointerEvents:'none', color:'grey'}}>GIFT CARD</Link>
+                          <Link
+                            style={{ pointerEvents: "none", color: "grey" }}
+                          >
+                            GIFT CARD
+                          </Link>
                         </li>
                       </ul>
                     </nav>
@@ -351,7 +347,9 @@ const Header = (props) => {
                               <Link to="/shop">Face Cleanser/Washes</Link>
                             </li>
                             <li>
-                              <Link to="/shop">Face Exfoliator,Peels & Scrubs</Link>
+                              <Link to="/shop">
+                                Face Exfoliator,Peels & Scrubs
+                              </Link>
                             </li>
                             <li>
                               <Link to="/shop">Face Moisturizers</Link>
@@ -363,9 +361,7 @@ const Header = (props) => {
                               <Link to="/shop">Face Masks</Link>
                             </li>
                             <li>
-                              <Link to="/shop">
-                             Face Serums
-                              </Link>
+                              <Link to="/shop">Face Serums</Link>
                             </li>
                           </ul>
                         </li>
@@ -382,7 +378,9 @@ const Header = (props) => {
                               <Link to="/shop">Body Washes</Link>
                             </li>
                             <li>
-                              <Link to="/shop">Body Exfoliators And Scrubs</Link>
+                              <Link to="/shop">
+                                Body Exfoliators And Scrubs
+                              </Link>
                             </li>
                             <li>
                               <Link to="/shop">Body Cleansing Bars</Link>
@@ -457,10 +455,10 @@ const Header = (props) => {
                   ) : null}
                 </li>
                 <li>
-                  <Link to="/about" >
-                  <a href="#!" onClick={() => handleShow("blogs")}>
-                    <span>ABOUT</span>
-                  </a>
+                  <Link to="/about">
+                    <a href="#!" onClick={() => handleShow("blogs")}>
+                      <span>ABOUT</span>
+                    </a>
                   </Link>
                   {/* {
                                         show === "blogs" ?
@@ -649,7 +647,7 @@ const Header = (props) => {
                     </Link>
                     <div className="offcanvas-wishlist-item-details">
                       <span className="offcanvas-wishlist-item-details-quantity">
-                        {data.quantity || 1} 
+                        {data.quantity || 1}
                       </span>
                       <span className="offcanvas-wishlist-item-details-price">
                         {" "}
@@ -773,27 +771,50 @@ const Header = (props) => {
           onSubmit={(e) => {
             e.preventDefault();
             handleSearch();
-          
           }}
         >
-          <input type="search" placeholder="type keyword(s) here" required onChange={handleFilter} />
+          <input
+            type="search"
+            placeholder="type keyword(s) here"
+            required
+            onChange={handleFilter}
+          />
           {filteredData.length !== 0 && (
-          <div className="search_data_result">
-{
-  filteredData.slice(0, 15).map((item)=>{
-    return <Link className="searchDataItem" to={`/product-details-one/${item.id}`}>
-      <div className="search-container" style={{display:'flex', marginBottom:'20px'}}>
-      <img src={item.img}width='30' className="searchImg" alt="images"></img>
-      <p className="searchTitle">{item.title}</p> <span style={{marginLeft:'auto', fontSize:'11px', fontWeight:'bolder'}}>&#8358;{item.price}</span>
-      </div></Link>
-      
-  })
-}
-
-          </div>
-          )
-}
-         
+            <Box sx={{ display:'flex', justifyContent:'center', alignItems:'center', height:'100vh', paddingTop:'300px', px:2}}>
+            <Box className="search_data_result" sx={{ height:'300px'}} >
+              {filteredData.slice(0, 15).map((item) => {
+                return (
+                  <Link
+                    className="searchDataItem "
+                    to={`/product-details-one/${item.id}`}
+                  >
+                    <div
+                      className="search-container"
+                      style={{ display: "flex", marginBottom: "20px" }}
+                    >
+                      <img
+                        src={item.img}
+                        width="30"
+                        className="searchImg"
+                        alt="images"
+                      ></img>
+                      <p className="searchTitle">{item.title}</p>{" "}
+                      <span
+                        style={{
+                          marginLeft: "auto",
+                          fontSize: "11px",
+                          fontWeight: "bolder",
+                        }}
+                      >
+                        &#8358;{item.price}
+                      </span>
+                    </div>
+                  </Link>
+                );
+              })}
+            </Box>
+            </Box>
+          )}
         </form>
       </div>
     </>

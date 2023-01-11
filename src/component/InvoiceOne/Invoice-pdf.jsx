@@ -42,7 +42,8 @@ const InvoiceOnes = () => {
           <div className="row">
             <div className="col-xl-8 m-auto">
             <div className="back_btn_emial">
-            <a onClick={() => {window.location.href="/"}}>
+            <a  href='/'
+            onClick={(e) => {window.location.href="/"}}>
                             <button className="theme-btn-one btn-black-overlay btn_sm" >
                                 <i className="fa fa-arrow-left mr-2"></i>Go Back Home
                             </button></a>

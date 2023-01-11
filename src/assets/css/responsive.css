@@ -378,15 +378,14 @@
         width: 130px !important;
     }
     .search_data_result{
-        width: 350px;
-        height: 270px;
+     
         overflow-y: scroll;
         color: white;
         position: relative;
         
       /* left: 90px;
       bottom: -300px;   */
-      margin-top: 300px;
+
       background-color: white;
       color:black ;
       padding: 10px;
@@ -984,14 +983,13 @@ justify-content: space-between;
 }
 /* search */
 .search_data_result{
-    width: 250px;
-    height: 270px;
+ 
     overflow-y: scroll;
     color: white;
     position: relative;
   /* left: 38px;
   bottom: -320px;   */
-  margin-top: 300px;
+  /* margin-top: 300px; */
   background-color: white;
   color:black ;
   padding: 10px;
@@ -1218,15 +1216,15 @@ justify-content: space-between;
     }
     
     .search_data_result{
-        width: 310px;
-        height: 270px;
+        /* width: 310px;
+        height: 270px; */
         overflow-y: scroll;
         color: white;
         position: relative;
         
       /* left: 40px;
       bottom: -410px;   */
-      margin-top: 300px;
+      /* margin-top: 300px; */
       
     
     }
@@ -1283,15 +1281,15 @@ justify-content: space-between;
     }
     
     .search_data_result{
-        width: 310px;
-        height: 270px;
+        /* width: 310px;
+        height: 270px; */
         overflow-y: scroll;
         color: white;
         position: relative;
         /* border: 2px solid pink; */
       /* left: 40px;
       bottom: -440px;   */
-      margin-top: 450px;
+      /* margin-top: 450px; */
       
     
     }
@@ -1300,7 +1298,7 @@ justify-content: space-between;
 
 @media (max-width: 376px) {
 .search_data_result{
-    margin-top: 330px;
+    /* margin-top: 330px; */
     /* border: 5px solid red; */
 }
 }
@@ -1319,8 +1317,8 @@ justify-content: space-between;
     }
     
     .search_data_result{
-        width: 350px;
-        height: 270px;
+        /* width: 350px;
+        height: 270px; */
         overflow-y: scroll;
         color: white;
         position: relative;
@@ -1328,7 +1326,7 @@ justify-content: space-between;
         
       /* left: 50px;
       bottom: -300px;   */
-      margin-top: 300px;
+      /* margin-top: 300px; */
       
     
     }
